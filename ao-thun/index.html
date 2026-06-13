@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Đầm Đen Tiểu Thư Dáng Xòe</title>
+<title>Chi Tiết Sản Phẩm</title>
 
 <style>
 *{
@@ -14,7 +14,7 @@
 }
 
 body{
-    background: transparent; /* Nền trong suốt hoàn toàn */
+    background: transparent;
     padding: 10px;
     overflow-x: hidden;
 }
@@ -27,9 +27,8 @@ body{
     align-items: flex-start;
 }
 
-/* KHU VỰC BÊN TRÁI: ẢNH VÀ BẢNG SIZE */
 .left-content {
-    width: 480px; /* Cố định độ rộng khu vực bên trái */
+    width: 480px; 
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -40,17 +39,16 @@ body{
     gap: 12px;
 }
 
-/* 4 ảnh nhỏ xếp dọc bằng đều chiều cao ảnh lớn */
 .thumbnails{
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Tự động giãn đều để bằng tổng chiều cao ảnh lớn */
-    height: 480px; /* Bằng chiều cao ảnh lớn */
+    justify-content: space-between; 
+    height: 480px; 
 }
 
 .thumbnails img{
     width: 80px;
-    height: 110px; /* Kích thước cân đối cho 4 ảnh */
+    height: 110px; 
     object-fit: cover;
     cursor: pointer;
     border: 2px solid transparent;
@@ -62,7 +60,6 @@ body{
     border: 2px solid #000;
 }
 
-/* Ảnh lớn */
 .main-image img{
     width: 360px;
     height: 480px;
@@ -71,7 +68,6 @@ body{
     display: block;
 }
 
-/* Bảng size nằm ngay dưới ảnh lớn và căn đều các góc ảnh */
 .size-chart{
     width: 100%;
     margin-top: 5px;
@@ -84,8 +80,6 @@ body{
     object-fit: contain;
 }
 
-
-/* KHU VỰC BÊN PHẢI: THÔNG TIN, CHỌN SIZE, MÔ TẢ */
 .info{
     flex: 1;
     max-width: 440px;
@@ -156,7 +150,6 @@ body{
     opacity: 0.9;
 }
 
-/* Mô tả sản phẩm nằm dưới nút mua */
 .description{
     font-size: 14px;
     line-height: 1.8;
@@ -193,7 +186,7 @@ body{
     </div>
 
     <div class="info">
-        <h1 class="product-title">ĐẦM ĐEN TIỂU THƯ DÁNG XÒE THANH LỊCH</h1>
+        <h1 class="product-title">TÊN SẢN PHẨM MỚI TẠI ĐÂY</h1>
         
         <div class="price">550.000₫</div>
 
@@ -205,16 +198,27 @@ body{
             <button class="size-btn" onclick="selectSize(this)">XL</button>
         </div>
 
-       <a href="https://www.facebook.com/people/TSoul/61590630800229/"_blank" style="text-decoration: none;">
-    <button class="buy-btn">🛒 MUA NGAY</button>
+       <a href="https://www.facebook.com/profile.php?id=61590630800229"
+   target="_top"
+   style="
+   display:block;
+   width:100%;
+   background:#000;
+   color:#fff;
+   text-align:center;
+   padding:14px;
+   border-radius:4px;
+   text-decoration:none;
+   font-weight:bold;">
+   🛒 MUA NGAY
 </a>
 
         <div class="description">
-            ✔ Thiết kế cổ tròn thanh lịch, tay ngắn trẻ trung.<br>
-            ✔ Dáng xòe nhẹ giúp tôn eo và che khuyết điểm hiệu quả.<br>
-            ✔ Chất liệu mềm mại, thoáng mát, mặc thoải mái cả ngày.<br>
-            ✔ Phù hợp đi chơi, hẹn hò, dự tiệc nhẹ hoặc chụp ảnh.<br>
-            ✔ Màu đen sang trọng, dễ phối giày và phụ kiện.
+            ✔ Thiết kế thời trang, trẻ trung và hiện đại.<br>
+            ✔ Form dáng chuẩn, tôn dáng và che khuyết điểm hiệu quả.<br>
+            ✔ Chất liệu vải cao cấp, mềm mại, thoáng mát cả ngày.<br>
+            ✔ Phù hợp đi chơi, đi làm, hẹn hò hoặc dạo phố.<br>
+            ✔ Dễ dàng kết hợp với nhiều loại phụ kiện khác nhau.
         </div>
     </div>
 
