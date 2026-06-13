@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chi Tiết Sản Phẩm</title>
+
+<style>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body{
+    background: transparent;
+    padding: 10px;
+    overflow-x: hidden;
+}
+
+.container{
+    max-width: 950px;
+    margin: auto;
+    display: flex;
+    gap: 25px;
+    align-items: flex-start;
+}
+
+.left-content {
+    width: 480px; 
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.gallery{
+    display: flex;
+    gap: 12px;
+}
+
+.thumbnails{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    height: 480px; 
+}
+
+.thumbnails img{
+    width: 80px;
+    height: 110px; 
+    object-fit: cover;
+    cursor: pointer;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    transition: 0.2s;
+}
+
+.thumbnails img.active{
+    border: 2px solid #000;
+}
+
+.main-image img{
+    width: 360px;
+    height: 480px;
+    object-fit: cover;
+    border-radius: 6px;
+    display: block;
+}
+
+.size-chart{
+    width: 100%;
+    margin-top: 5px;
+}
+
+.size-chart img{
+    width: 100%;
+    border-radius: 6px;
+    display: block;
+    object-fit: contain;
+}
+
+.info{
+    flex: 1;
+    max-width: 440px;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-title{
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 12px;
+    line-height: 1.4;
+    color: #000;
+}
+
+.price{
+    font-size: 26px;
+    color: #d62828;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.size-title{
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #333;
+}
+
+.sizes{
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.size-btn{
+    width: 48px;
+    height: 42px;
+    border: 1px solid #ccc;
+    background: white;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: 0.1s;
+}
+
+.size-btn.active{
+    background: black;
+    color: white;
+    border-color: black;
+}
+
+.buy-btn{
+    background: black;
+    color: white;
+    border: none;
+    padding: 14px 25px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 4px;
+    width: 100%;
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+.buy-btn:hover {
+    opacity: 0.9;
+}
+
+.description{
+    font-size: 14px;
+    line-height: 1.8;
+    color: #444;
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 6px;
+    border: 1px solid #eee;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="left-content">
+        <div class="gallery">
+            <div class="thumbnails">
+                <img src="arnh 1.jpg" class="thumb active" onclick="changeImage(this)">
+                <img src="anh2.jpg" class="thumb" onclick="changeImage(this)">
+                <img src="anh3.jpg" class="thumb" onclick="changeImage(this)">
+                <img src="anhr4.jpg" class="thumb" onclick="changeImage(this)">
+            </div>
+
+            <div class="main-image">
+                <img id="mainImg" src="arnh 1.jpg">
+            </div>
+        </div>
+
+        <div class="size-chart">
+            <img src="bảng size.jpg" alt="Bảng chọn size">
+        </div>
+    </div>
+
+    <div class="info">
+        <h1 class="product-title">MONO LAYER SET – TỐI GIẢN NHƯNG ĐẦY TINH TẾ</h1>
+        
+        <div class="price">350.000₫</div>
+
+        <div class="size-title">Chọn Size:</div>
+        <div class="sizes">
+            <button class="size-btn" onclick="selectSize(this)">S</button>
+            <button class="size-btn" onclick="selectSize(this)">M</button>
+            <button class="size-btn" onclick="selectSize(this)">L</button>
+            <button class="size-btn" onclick="selectSize(this)">XL</button>
+        </div>
+
+       <a href="https://www.facebook.com/profile.php?id=61590630800229"
+   target="_top"
+   style="
+   display:block;
+   width:100%;
+   background:#000;
+   color:#fff;
+   text-align:center;
+   padding:14px;
+   border-radius:4px;
+   text-decoration:none;
+   font-weight:bold;">
+   🛒 MUA NGAY
+</a>
+
+        <div class="description">
+           ✔ Thiết kế layering chuẩn phong cách Hàn Quốc.<br>
+           ✔ Thanh lịch, trẻ trung và dễ mặc.<br>
+            ✔ Form suông thoải mái.<br>
+            ✔ Phù hợp đi chơi, đi làm, hẹn hò hoặc dạo phố.<br>
+            ✔ Dễ dàng kết hợp với nhiều loại phụ kiện khác nhau.
+        </div>
+    </div>
+
+</div>
+
+<script>
+function changeImage(img){
+    document.getElementById("mainImg").src = img.src;
+    document.querySelectorAll(".thumb").forEach(item=>{
+        item.classList.remove("active");
+    });
+    img.classList.add("active");
+}
+
+function selectSize(btn){
+    document.querySelectorAll(".size-btn").forEach(item=>{
+        item.classList.remove("active");
+    });
+    btn.classList.add("active");
+}
+</script>
+
+</body>
+</html>
