@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chi Tiết Sản Phẩm</title>
+
+<style>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body{
+    background: transparent; /* Giữ nền trong suốt để hòa vào Google Sites */
+    padding: 10px;
+    overflow-x: hidden;
+}
+
+.container{
+    max-width: 950px;
+    margin: auto;
+    display: flex;
+    gap: 25px;
+    align-items: flex-start;
+}
+
+/* KHU VỰC BÊN TRÁI: ẢNH VÀ BẢNG SIZE */
+.left-content {
+    width: 480px; 
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.gallery{
+    display: flex;
+    gap: 12px;
+}
+
+/* 4 ảnh nhỏ xếp dọc bằng đều chiều cao ảnh lớn */
+.thumbnails{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    height: 480px; 
+}
+
+.thumbnails img{
+    width: 80px;
+    height: 110px; 
+    object-fit: cover;
+    cursor: pointer;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    transition: 0.2s;
+}
+
+.thumbnails img.active{
+    border: 2px solid #000;
+}
+
+/* Ảnh lớn */
+.main-image img{
+    width: 360px;
+    height: 480px;
+    object-fit: cover;
+    border-radius: 6px;
+    display: block;
+}
+
+/* Bảng size nằm ngay dưới ảnh lớn và căn đều các góc ảnh */
+.size-chart{
+    width: 100%;
+    margin-top: 5px;
+}
+
+.size-chart img{
+    width: 100%;
+    border-radius: 6px;
+    display: block;
+    object-fit: contain;
+}
+
+
+/* KHU VỰC BÊN PHẢI: THÔNG TIN, CHỌN SIZE, MÔ TẢ */
+.info{
+    flex: 1;
+    max-width: 440px;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-title{
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 12px;
+    line-height: 1.4;
+    color: #000;
+}
+
+.price{
+    font-size: 26px;
+    color: #d62828;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.size-title{
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #333;
+}
+
+.sizes{
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.size-btn{
+    width: 48px;
+    height: 42px;
+    border: 1px solid #ccc;
+    background: white;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: 0.1s;
+}
+
+.size-btn.active{
+    background: black;
+    color: white;
+    border-color: black;
+}
+
+.buy-btn{
+    background: black;
+    color: white;
+    border: none;
+    padding: 14px 25px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 4px;
+    width: 100%;
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+.buy-btn:hover {
+    opacity: 0.9;
+}
+
+/* Mô tả sản phẩm nằm dưới nút mua */
+.description{
+    font-size: 14px;
+    line-height: 1.8;
+    color: #444;
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 6px;
+    border: 1px solid #eee;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="left-content">
+        <div class="gallery">
+            <div class="thumbnails">
+                <img src="arnh 1.jpg" class="thumb active" onclick="changeImage(this)">
+                <img src="anh2.jpg" class="thumb" onclick="changeImage(this)">
+                <img src="anh3.jpg" class="thumb" onclick="changeImage(this)">
+                <img src="anhr4.jpg" class="thumb" onclick="changeImage(this)">
+            </div>
+
+            <div class="main-image">
+                <img id="mainImg" src="arnh 1.jpg">
+            </div>
+        </div>
+
+        <div class="size-chart">
+            <img src="bảng size.jpg" alt="Bảng chọn size">
+        </div>
+    </div>
+
+    <div class="info">
+        <h1 class="product-title">TÊN SẢN PHẨM MỚI TẠI ĐÂY</h1>
+        
+        <div class="price">550.000₫</div>
+
+        <div class="size-title">Chọn Size:</div>
+        <div class="sizes">
+            <button class="size-btn" onclick="selectSize(this)">S</button>
+            <button class="size-btn" onclick="selectSize(this)">M</button>
+            <button class="size-btn" onclick="selectSize(this)">L</button>
+            <button class="size-btn" onclick="selectSize(this)">XL</button>
+        </div>
+
+        <button class="buy-btn">🛒 MUA NGAY</button>
+
+        <div class="description">
+            ✔ Thiết kế thời trang, trẻ trung và hiện đại.<br>
+            ✔ Form dáng chuẩn, tôn dáng và che khuyết điểm hiệu quả.<br>
+            ✔ Chất liệu vải cao cấp, mềm mại, thoáng mát cả ngày.<br>
+            ✔ Phù hợp đi chơi, đi làm, hẹn hò hoặc dạo phố.<br>
+            ✔ Dễ dàng kết hợp với nhiều loại phụ kiện khác nhau.
+        </div>
+    </div>
+
+</div>
+
+<script>
+function changeImage(img){
+    document.getElementById("mainImg").src = img.src;
+    document.querySelectorAll(".thumb").forEach(item=>{
+        item.classList.remove("active");
+    });
+    img.classList.add("active");
+}
+
+function selectSize(btn){
+    document.querySelectorAll(".size-btn").forEach(item=>{
+        item.classList.remove("active");
+    });
+    btn.classList.add("active");
+}
+</script>
+
+</body>
+</html>
